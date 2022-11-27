@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  app:
+    image: "stop_horny_rs"
+    container_name: "stop_horny"
+    networks:
+      - nginx
+
+networks:
+  nginx:
+    external: true
+    name: "nginx_proxy_manager_default"

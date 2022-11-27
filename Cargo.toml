@@ -1,0 +1,16 @@
+[package]
+name = "stop_horny"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.2.1"
+actix-files = "0.6.2"
+env_logger = "0.10.0"
+log = "0.4.17"
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true
+opt-level = "s"
