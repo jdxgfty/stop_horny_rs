@@ -24,7 +24,10 @@ async fn stop_horny(req: HttpRequest) -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    env_logger::init();
+    env_logger::init_from_env(
+        env_logger::Env::default().default_filter_or("actix_server::builder=info,actix_server::server=info")
+    );
+
     HttpServer::new(|| {
         App::new()
             .route("/", web::to(stop_horny))
